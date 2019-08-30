@@ -12,10 +12,11 @@ export default function Map({ children }) {
   return (
     <Container
       center={{
-        lat: -24.725261017477113,
-        lng: -51.1831060051918
+        lat: -23.4123665,
+        lng: -51.9306166
       }}
-      zoom={9}
+      zoom={8}
+      minZoom={6}
       onControl
       zoomControl
       scrollWheelZoom

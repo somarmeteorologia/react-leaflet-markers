@@ -16,8 +16,7 @@ import Markers from '@somarmeteorologia/react-leaflet-markers'
 
 const defaultIcon = L.divIcon({
   html: renderToString(<Icon />),
-  iconSize: [24, 41],
-  iconAnchor: [12, 41],
+  iconSize: [24, 41]
 })
 
 <Map>
@@ -50,8 +49,7 @@ The following attributes are required inside `icon` object from `Marker` compone
 {
   html: String,
   iconUrl: String,
-  iconSize: Array[Number],
-  iconArchor: Array[Number]
+  iconSize: Array[Number]
 }
 ```
 

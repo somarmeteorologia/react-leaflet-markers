@@ -12,7 +12,7 @@ import Markers from '../src/index'
 
 const defaultIcon = L.divIcon({
   html: renderToString(<Marker />),
-  iconSize: [24, 41],
+  iconSize: [26, 48],
   iconAnchor: [12, 41],
   className: 'icon'
 })
@@ -41,29 +41,25 @@ const Container = styled.div`
 
 const Example = () => {
   const [messages, setMessages] = useState([])
-  const [withLibrary, setWithLibrary] = useState(false)
-  const [withoutLibrary, setWithoutLibrary] = useState(false)
+  const [withLibrary, setWithLibrary] = useState(true)
+  const [withoutLibrary, setWithoutLibrary] = useState(true)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      console.log('MARKERS ', messages.length)
+    console.log('MARKERS ', messages.length)
 
-      const markers = []
+    const markers = []
 
-      for (var i = 0; i < 10; i++) {
-        let marker = {
-          latitude: -24.5578 + Math.random() * 1.8,
-          longitude: -51.0087 + Math.random() * 3.6
-        }
-
-        markers.push(marker)
+    for (var i = 0; i < 10; i++) {
+      let marker = {
+        latitude: -23.4123665 + Math.random() * 1.8,
+        longitude: -51.9306166 + Math.random() * 3.6
       }
 
-      setMessages(messages => [...messages, ...markers])
-    }, 2000)
+      markers.push(marker)
+    }
 
-    return () => clearInterval(interval)
-  })
+    setMessages(messages => [...messages, ...markers])
+  }, [])
 
   const markers = () => {
     return messages.map(item => {

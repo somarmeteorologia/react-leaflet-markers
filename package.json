@@ -1,7 +1,7 @@
 {
   "name": "@somarmeteorologia/react-leaflet-markers",
   "description": "",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/somarmeteorologia/react-leaflet-markers#readme",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",

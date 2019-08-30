@@ -175,8 +175,8 @@ L.Markers = (L.Layer ? L.Layer : L.Class).extend({
   draw: function(marker, position, image) {
     this._context.drawImage(
       image,
-      position.x - marker.props.icon.options.iconAnchor[0],
-      position.y - marker.props.icon.options.iconAnchor[1],
+      position.x - marker.props.icon.options.iconSize[0] / 2,
+      position.y - marker.props.icon.options.iconSize[0] / 2,
       marker.props.icon.options.iconSize[0],
       marker.props.icon.options.iconSize[1]
     )

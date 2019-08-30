@@ -1,4 +1,5 @@
 # React Leaflet Markers
+> :pushpin: Provide a HOC to render markers with canvas instead DOM nodes with better performance. 
 
 ## How use
 

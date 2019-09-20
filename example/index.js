@@ -12,8 +12,7 @@ import Markers from '../src/index'
 
 const defaultIcon = L.divIcon({
   html: renderToString(<Marker />),
-  iconSize: [26, 48],
-  iconAnchor: [12, 41],
+  iconSize: [15, 15],
   className: 'icon'
 })
 
@@ -45,21 +44,26 @@ const Example = () => {
   const [withoutLibrary, setWithoutLibrary] = useState(true)
 
   useEffect(() => {
-    console.log('MARKERS ', messages.length)
+    const interval = setInterval(() => {
+      setMessages(messages => {
+        const [first, rest] = messages
+        const result = messages.length > 2 ? [rest] : messages
 
-    const markers = []
+        return [...result]
+      })
 
-    for (var i = 0; i < 10; i++) {
-      let marker = {
-        latitude: -23.4123665 + Math.random() * 1.8,
-        longitude: -51.9306166 + Math.random() * 3.6
+      for (var i = 0; i < 3; i++) {
+        let marker = {
+          latitude: -24.5578 + Math.random() * 1.8,
+          longitude: -51.0087 + Math.random() * 3.6
+        }
+
+        setMessages(messages => [...messages, marker])
       }
+    }, 2000)
 
-      markers.push(marker)
-    }
-
-    setMessages(messages => [...messages, ...markers])
-  }, [])
+    return () => clearInterval(interval)
+  })
 
   const markers = () => {
     return messages.map(item => {

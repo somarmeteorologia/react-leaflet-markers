@@ -15,7 +15,7 @@ export default function Map({ children }) {
         lat: -23.4123665,
         lng: -51.9306166
       }}
-      zoom={8}
+      zoom={6}
       minZoom={6}
       onControl
       zoomControl

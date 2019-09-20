@@ -49,6 +49,8 @@ L.Markers = (L.Layer ? L.Layer : L.Class).extend({
     store.positions.clear()
     store.coordinates.clear()
 
+    this.reset()
+
     const coordinates = []
     const positions = []
 
